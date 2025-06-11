@@ -2,14 +2,16 @@
 
 # asdf-otelcol [![Build](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/build.yml/badge.svg)](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/build.yml) [![Lint](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/lint.yml/badge.svg)](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/lint.yml)
 
-[otelcol](https://opentelemetry.io/docs/) plugin for the [asdf version manager](https://asdf-vm.com).
+[otelcol](https://opentelemetry.io/) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
 # Contents
 
-- [Dependencies](#dependencies)
+- [asdf-otelcol  ](#asdf-otelcol--)
+- [Contents](#contents)
 - [Install](#install)
+  - [Selecting the Otelcol distribution](#selecting-the-otelcol-distribution)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -18,8 +20,6 @@
 Plugin:
 
 ```shell
-asdf plugin add otelcol
-# or
 asdf plugin add otelcol https://github.com/ChristianCiach/asdf-otelcol.git
 ```
 
@@ -27,13 +27,13 @@ otelcol:
 
 ```shell
 # Show all installable versions
-asdf list-all otelcol
+asdf list all otelcol
 
 # Install specific version
 asdf install otelcol latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global otelcol latest
+asdf set --home otelcol latest
 
 # Now otelcol commands are available
 otelcol --version
@@ -41,6 +41,17 @@ otelcol --version
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
+
+## Selecting the Otelcol distribution
+
+This plugin installs the "core" distribution of otelcol by default.
+
+Another distribution can be selected by using the `ASDF_OTELCOL_DISTRIBUTION` environmental variable:
+
+```shell
+export ASDF_OTELCOL_DISTRIBUTION=contrib
+asdf install otelcol latest
+```
 
 # Contributing
 
