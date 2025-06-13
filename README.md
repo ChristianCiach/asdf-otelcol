@@ -2,7 +2,7 @@
 
 # asdf-otelcol [![Build](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/build.yml/badge.svg)](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/build.yml) [![Lint](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/lint.yml/badge.svg)](https://github.com/ChristianCiach/asdf-otelcol/actions/workflows/lint.yml)
 
-[otelcol](https://opentelemetry.io/) plugin for the [asdf version manager](https://asdf-vm.com).
+[otelcol](https://opentelemetry.io/docs/collector/) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
