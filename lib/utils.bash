@@ -85,7 +85,11 @@ install_version() {
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
 		test -x "$install_path/$otelcol_bin" || fail "Expected $install_path/$otelcol_bin to be executable."
-
+		
+		if [[ "$otelcol_bin" != "otelcol" ]]; then
+			mv "$install_path/$otelcol_bin" "$install_path/otelcol"
+		fi
+			
 		echo "$otelcol_bin $version installation was successful!"
 	) || (
 		rm -rf "$install_path"
