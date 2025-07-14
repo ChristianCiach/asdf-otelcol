@@ -49,9 +49,10 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 	curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
 
+otelcol_dist=${ASDF_OTELCOL_DISTRIBUTION:-contrib}
 otelcol_bin="otelcol"
-if [ -n "${ASDF_OTELCOL_DISTRIBUTION:-}" ]; then
-	otelcol_bin="otelcol-${ASDF_OTELCOL_DISTRIBUTION}"
+if [[ "$otelcol_dist" != "core" ]]; then
+	otelcol_bin="otelcol-$otelcol_dist"
 fi
 
 download_release() {
@@ -85,7 +86,7 @@ install_version() {
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
 		test -x "$install_path/$otelcol_bin" || fail "Expected $install_path/$otelcol_bin to be executable."
-		
+
 		if [[ "$otelcol_bin" != "otelcol" ]]; then
 			mv "$install_path/$otelcol_bin" "$install_path/otelcol"
 		fi
