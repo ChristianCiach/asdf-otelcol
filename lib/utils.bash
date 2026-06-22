@@ -90,7 +90,7 @@ install_version() {
 		if [[ "$otelcol_bin" != "otelcol" ]]; then
 			mv "$install_path/$otelcol_bin" "$install_path/otelcol"
 		fi
-			
+
 		echo "$otelcol_bin $version installation was successful!"
 	) || (
 		rm -rf "$install_path"
